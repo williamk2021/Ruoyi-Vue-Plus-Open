@@ -99,4 +99,8 @@ public class Cpu
     {
         this.free = free;
     }
+    public void setFree2(double free)
+    {
+        this.free = free;
+    }
 }
