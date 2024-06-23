@@ -3,8 +3,8 @@ package com.ruoyi.web.controller.monitor;
 
 
 
-import com.roc.system.domain.server.Server;
 import com.ruoyi.common.core.domain.R;
+import com.ruoyi.common.domain.server.Server;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
