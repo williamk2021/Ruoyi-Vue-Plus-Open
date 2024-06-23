@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java:8_server-jre_unlimited
+FROM openjdk:11
 
 MAINTAINER Lion Li
 
@@ -7,6 +7,9 @@ RUN mkdir -p /ruoyi/server/logs \
     /ruoyi/skywalking/agent
 
 WORKDIR /ruoyi/server
+
+ENV TZ=PRC
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ENV SERVER_PORT=8080
 
