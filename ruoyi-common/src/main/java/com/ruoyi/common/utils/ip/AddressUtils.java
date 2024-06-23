@@ -2,6 +2,7 @@ package com.ruoyi.common.utils.ip;
 
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.http.HtmlUtil;
+import com.ruoyi.common.utils.IPv6Util;
 import com.ruoyi.common.utils.StringUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,9 @@ public class AddressUtils {
     public static String getRealAddressByIP(String ip) {
         if (StringUtils.isBlank(ip)) {
             return UNKNOWN;
+        }
+        if (IPv6Util.isIPv6Address(ip)){
+            return "IPV6地址"+ip;
         }
         // 内网不查询
         ip = StringUtils.contains(ip, "0:0:0:0:0:0:0:1") ? "127.0.0.1" : HtmlUtil.cleanHtmlTag(ip);
